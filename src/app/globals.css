@@ -78,3 +78,15 @@ body {
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
   border-color: rgba(59, 130, 246, 0.3);
 }
+
+/* Fix select dropdown option styling */
+select option {
+  background-color: var(--color-slate-800);
+  color: white;
+  padding: 8px;
+}
+
+select option:checked {
+  background-color: var(--color-blue-500);
+  color: white;
+}

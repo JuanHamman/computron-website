@@ -10,15 +10,17 @@ export default function ContactForm() {
     e.preventDefault();
     const form = e.currentTarget;
     try {
-      await fetch('https://formspree.io/f/placeholder', {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
-    } catch {
-      // silent fail for placeholder
+      if (response.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
     }
-    setSubmitted(true);
   };
 
   if (submitted) {
@@ -40,7 +42,7 @@ export default function ContactForm() {
   }
 
   const inputClass = "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-colors";
-  const selectClass = `${inputClass} appearance-none`;
+  const selectClass = `${inputClass} appearance-none [&>option]:bg-slate-800 [&>option]:text-white`;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
