@@ -1,65 +1,104 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Hero from '@/components/Hero';
+import ServiceCard from '@/components/ServiceCard';
+import PortfolioCard from '@/components/PortfolioCard';
+import ProcessStep from '@/components/ProcessStep';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import TechMarquee from '@/components/TechMarquee';
+import { services } from '@/data/services';
+import { projects } from '@/data/portfolio';
+
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <section className={`py-24 px-6 ${className}`}><div className="max-w-7xl mx-auto">{children}</div></section>;
+}
+
+function SectionHeader({ label, title, desc }: { label?: string; title: string; desc?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      {label && <p className="text-blue-400 text-sm font-medium mb-3">{label}</p>}
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h2>
+      {desc && <p className="text-slate-400 max-w-2xl mx-auto">{desc}</p>}
+    </motion.div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Hero />
+
+      {/* Built With Modern Technology */}
+      <section className="py-16 px-6 border-y border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-slate-500 text-sm mb-8">Built With Modern Technology</p>
+          <TechMarquee />
+        </div>
+      </section>
+
+      {/* Services */}
+      <Section>
+        <SectionHeader label="What We Do" title="Services Built for Growth" desc="End-to-end software development, from concept to launch and beyond." />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((s, i) => (
+            <ServiceCard key={s.id} title={s.title} shortDesc={s.shortDesc} icon={s.icon} index={i} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Capabilities Showcase */}
+      <Section className="bg-white/[0.01]">
+        <SectionHeader label="Our Capabilities" title="What We Can Build" desc="Concept designs showcasing our development capabilities across industries." />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {projects.filter(p => p.featured).map((p, i) => (
+            <PortfolioCard key={p.slug} {...p} index={i} />
+          ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link href="/work" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">
+            Explore All Capabilities →
+          </Link>
+        </div>
+      </Section>
+
+      {/* How We Work */}
+      <Section>
+        <SectionHeader label="Our Process" title="How We Work" desc="A proven process that turns your idea into a shipped product — efficiently and transparently." />
+        <ProcessStep />
+      </Section>
+
+      {/* Stats */}
+      <Section className="bg-white/[0.01]">
+        <AnimatedCounter />
+      </Section>
+
+      {/* CTA */}
+      <Section>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center rounded-2xl border border-white/5 bg-gradient-to-br from-blue-500/5 to-blue-600/5 p-12 md:p-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Something Amazing?</h2>
+          <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+            Let&apos;s talk about your project. We&apos;ll help you figure out the best approach, timeline, and budget.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
+            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 py-3.5 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            Start a Project
+          </Link>
+        </motion.div>
+      </Section>
+    </>
   );
 }
