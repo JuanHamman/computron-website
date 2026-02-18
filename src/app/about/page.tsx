@@ -47,23 +47,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="py-20 px-6 bg-white/[0.01]">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
-              JH
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-1">Juan Hamman</h2>
-              <p className="text-blue-400 text-sm font-medium mb-4">CEO & Founder</p>
-              <p className="text-slate-400 leading-relaxed">
-                A passionate technologist with a deep love for building things that matter. Juan founded Computron Tech to bridge the gap between ambitious ideas and exceptional software. With a background spanning full-stack development, cloud architecture, and product strategy, he leads every project with a focus on delivering real value — fast, clean, and right.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Values */}
       <section className="py-20 px-6">
