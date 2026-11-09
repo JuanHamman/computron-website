@@ -48,11 +48,6 @@ export default function Footer() {
               <a href="mailto:hello@computrontech.com" className="hover:text-slate-300 transition-colors">hello@computrontech.com</a>
               <p>Based in South Africa</p>
               <p>Serving clients worldwide</p>
-              <div className="flex gap-4 mt-2">
-                {['LinkedIn', 'X', 'GitHub'].map((s) => (
-                  <a key={s} href="#" className="hover:text-white transition-colors">{s}</a>
-                ))}
-              </div>
             </div>
           </div>
         </div>
