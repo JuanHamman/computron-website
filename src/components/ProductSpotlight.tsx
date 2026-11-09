@@ -41,7 +41,7 @@ export default function ProductSpotlight({ project }: { project: Project }) {
           <div className="grid grid-cols-3 gap-4 mb-8">
             {live.highlights.map((h) => (
               <div key={h.label}>
-                <div className="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">{h.value}</div>
+                <div className="font-display text-xl sm:text-2xl font-bold text-white whitespace-nowrap">{h.value}</div>
                 <div className="text-slate-500 text-xs">{h.label}</div>
               </div>
             ))}

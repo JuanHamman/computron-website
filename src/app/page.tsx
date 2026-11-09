@@ -24,7 +24,7 @@ function SectionHeader({ label, title, desc }: { label?: string; title: string; 
       viewport={{ once: true }}
       className="text-center mb-16"
     >
-      {label && <p className="text-blue-400 text-sm font-medium mb-3">{label}</p>}
+      {label && <p className="text-blue-400 text-xs font-semibold uppercase tracking-[0.08em] mb-3">{label}</p>}
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h2>
       {desc && <p className="text-slate-400 max-w-2xl mx-auto">{desc}</p>}
     </motion.div>

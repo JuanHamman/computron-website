@@ -10,7 +10,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 mesh-gradient opacity-50" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-blue-400 text-sm font-medium mb-3">Contact Us</p>
+            <p className="text-blue-400 text-xs font-semibold uppercase tracking-[0.08em] mb-3">Contact Us</p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Let&apos;s Start Something Great</h1>
             <p className="text-slate-400 text-lg">Tell us about your project and we&apos;ll get back to you within 24 hours.</p>
           </motion.div>

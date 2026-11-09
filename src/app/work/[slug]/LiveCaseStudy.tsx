@@ -60,7 +60,7 @@ export default function LiveCaseStudy({ project, live }: { project: Project; liv
         <div className="max-w-5xl mx-auto grid grid-cols-3 gap-6 rounded-2xl border border-white/5 bg-white/[0.02] p-8 text-center">
           {live.highlights.map((h) => (
             <div key={h.label}>
-              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 whitespace-nowrap">{h.value}</div>
+              <div className="font-display text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 whitespace-nowrap">{h.value}</div>
               <div className="text-slate-400 text-sm">{h.label}</div>
             </div>
           ))}

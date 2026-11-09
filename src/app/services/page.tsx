@@ -13,7 +13,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 mesh-gradient opacity-50" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-blue-400 text-sm font-medium mb-3">Our Services</p>
+            <p className="text-blue-400 text-xs font-semibold uppercase tracking-[0.08em] mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Everything You Need to Ship Great Software</h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">Full-stack development expertise across web, mobile, and design. One team, every capability.</p>
           </motion.div>

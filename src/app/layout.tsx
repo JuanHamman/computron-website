@@ -1,16 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-space-grotesk', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.computrontech.com'),
-  title: 'Computron Tech — Premium Software Development Studio',
-  description: 'We build exceptional web apps, mobile apps, and SaaS platforms that drive growth. Custom software development studio based in South Africa, serving clients worldwide.',
-  keywords: 'software development, web apps, mobile apps, SaaS, API development, UI/UX design',
+  title: {
+    default: 'Computron Tech — Web, Mobile and Desktop Software Studio',
+    template: '%s · Computron Tech',
+  },
+  description: 'Software that ships, from a team that owns it. Computron Tech designs, builds and runs web, desktop and mobile software for clients worldwide, and makes Doppelgone. Based in South Africa.',
+  keywords: 'software development, web apps, mobile apps, SaaS, API development, UI/UX design, South Africa',
 };
 
 const organizationJsonLd = {
@@ -34,7 +38,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

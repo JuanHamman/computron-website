@@ -17,13 +17,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!project) return {};
   if (project.live) {
     return {
-      title: `${project.title}: a product built by Computron Tech`,
+      title: `${project.title}, a product we built`,
       description: `${project.live.tagline} ${project.title} is a duplicate photo cleaner for Google Photos, iCloud Photos, Windows, Mac, iPhone and Android, designed, built and run by Computron Tech.`,
       openGraph: { images: [project.live.hero.src] },
     };
   }
   return {
-    title: `${project.title} · Computron Tech`,
+    title: project.title,
     description: project.challenge,
   };
 }

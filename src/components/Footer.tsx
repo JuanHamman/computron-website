@@ -11,7 +11,7 @@ export default function Footer() {
               <Logo size="sm" />
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Premium software development studio. We turn ambitious ideas into exceptional digital products.
+              Software that ships, from a team that owns it. Web, desktop and mobile, for clients worldwide.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-600 text-sm">© {new Date().getFullYear()} Computron Tech (Pty) Ltd. All rights reserved.</p>
-          <p className="text-slate-600 text-sm">Built with ❤️ in South Africa</p>
+          <p className="text-slate-600 text-sm">Makers of Doppelgone · South Africa</p>
         </div>
       </div>
     </footer>
