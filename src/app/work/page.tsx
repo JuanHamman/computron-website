@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { projects } from '@/data/portfolio';
 import PortfolioCard from '@/components/PortfolioCard';
+import ProductSpotlight from '@/components/ProductSpotlight';
 
 export default function WorkPage() {
   return (
@@ -12,17 +13,28 @@ export default function WorkPage() {
         <div className="absolute inset-0 mesh-gradient opacity-50" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-blue-400 text-sm font-medium mb-3">Our Capabilities</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">What We Can Build For You</h1>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">Explore how we&apos;d approach building solutions across different industries. Each showcase demonstrates our design and development capabilities.</p>
-            <p className="text-slate-500 text-sm mt-4 italic">Concept designs showcasing our development capabilities</p>
+            <p className="text-blue-400 text-sm font-medium mb-3">Our Work</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">What We Build</h1>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">Our own live product, plus concept designs showing how we&apos;d approach projects across different industries.</p>
           </motion.div>
         </div>
       </section>
 
+      {projects.filter((p) => p.live).map((p) => (
+        <section key={p.slug} className="pb-16 px-6">
+          <div className="max-w-7xl mx-auto">
+            <ProductSpotlight project={p} />
+          </div>
+        </section>
+      ))}
+
       <section className="pb-24 px-6">
+        <div className="max-w-7xl mx-auto text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Capability Showcases</h2>
+          <p className="text-slate-500 text-sm italic">Concept designs showcasing our development capabilities</p>
+        </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((p, i) => (
+          {projects.filter((p) => !p.live).map((p, i) => (
             <PortfolioCard key={p.slug} {...p} index={i} />
           ))}
         </div>

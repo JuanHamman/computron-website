@@ -66,7 +66,7 @@ export default function Hero() {
             href="/work"
             className="border border-white/10 hover:border-white/20 text-white font-medium px-8 py-3.5 rounded-lg transition-all hover:bg-white/5"
           >
-            Our Capabilities
+            Our Work
           </Link>
         </motion.div>
       </div>

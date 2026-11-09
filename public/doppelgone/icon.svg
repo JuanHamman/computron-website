@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <title>Doppelgone</title>
+  <rect width="32" height="32" rx="7" fill="#0F8F7A"/>
+  <rect x="14" y="4" width="14" height="14" rx="4" fill="#FFFFFF" opacity=".55"/>
+  <rect x="4" y="14" width="14" height="14" rx="4" fill="#FFFFFF"/>
+  <circle cx="13.8" cy="18.4" r="2" fill="#0F8F7A"/>
+  <path d="M6 26L10 21L12.6 24.1L14.4 22.3L16.5 26Z" fill="#0F8F7A"/>
+</svg>

@@ -6,19 +6,9 @@ import ShopFlowDashboard from '@/components/mockups/ShopFlowDashboard';
 import VitalTrackApp from '@/components/mockups/VitalTrackApp';
 import CloudDeskPlatform from '@/components/mockups/CloudDeskPlatform';
 import PayNovaApp from '@/components/mockups/PayNovaApp';
+import type { Project } from '@/data/portfolio';
+import LiveCaseStudy from './LiveCaseStudy';
 
-type Project = {
-  slug: string;
-  title: string;
-  category: string;
-  clientType: string;
-  challenge: string;
-  solution: string;
-  techStack: string[];
-  results: string[];
-  mockupType: 'desktop' | 'mobile';
-  color: string;
-};
 
 const mockups: Record<string, React.ComponentType> = {
   'e-commerce': ShopFlowDashboard,
@@ -28,6 +18,7 @@ const mockups: Record<string, React.ComponentType> = {
 };
 
 export default function CaseStudyContent({ project }: { project: Project }) {
+  if (project.live) return <LiveCaseStudy project={project} live={project.live} />;
   const Mockup = mockups[project.slug];
 
   return (
@@ -36,7 +27,7 @@ export default function CaseStudyContent({ project }: { project: Project }) {
         <div className="absolute inset-0 mesh-gradient opacity-30" />
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <Link href="/work" className="text-slate-400 hover:text-white text-sm mb-6 inline-block transition-colors">← Back to Capabilities</Link>
+            <Link href="/work" className="text-slate-400 hover:text-white text-sm mb-6 inline-block transition-colors">← Back to Our Work</Link>
             <p className="text-sm font-medium mb-2" style={{ color: project.color }}>{project.category}</p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
             <p className="text-slate-400">Industry: {project.clientType}</p>

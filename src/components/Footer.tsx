@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               {[
                 { label: 'Services', href: '/services' },
-                { label: 'Capabilities', href: '/work' },
+                { label: 'Our Work', href: '/work' },
                 { label: 'About', href: '/about' },
                 { label: 'Contact', href: '/contact' },
               ].map((l) => (
@@ -30,6 +30,10 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="text-white font-semibold text-sm mb-4">Our Products</h4>
+            <div className="flex flex-col gap-3 mb-8">
+              <a href="https://doppelgone.app/?utm_source=computrontech&utm_medium=referral&utm_campaign=footer" target="_blank" rel="noopener" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">Doppelgone ↗</a>
+            </div>
             <h4 className="text-white font-semibold text-sm mb-4">Services</h4>
             <div className="flex flex-col gap-3">
               {['Web Apps', 'Mobile Apps', 'SaaS Platforms', 'API Development'].map((s) => (
@@ -54,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-600 text-sm">© 2025 Computron Tech. All rights reserved.</p>
+          <p className="text-slate-600 text-sm">© {new Date().getFullYear()} Computron Tech (Pty) Ltd. All rights reserved.</p>
           <p className="text-slate-600 text-sm">Built with ❤️ in South Africa</p>
         </div>
       </div>

@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: '6 Week', sublabel: 'Average Delivery', icon: '⚡' },
-  { label: 'Lowest Cost', sublabel: 'Guaranteed', icon: '💰' },
-  { label: 'Full-Stack', sublabel: 'Capabilities', icon: '🛠️' },
-  { label: 'Any Tech', sublabel: 'Stack', icon: '🔧' },
+  { label: '5 Platforms', sublabel: 'Shipped with Doppelgone', icon: '🚀' },
+  { label: '4 App Stores', sublabel: 'Chrome, Microsoft, Apple, Google', icon: '🏪' },
+  { label: 'On-Device AI', sublabel: 'Private by design', icon: '🔒' },
+  { label: 'Full-Stack', sublabel: 'Web, desktop and mobile', icon: '🛠️' },
 ];
 
 export default function AnimatedCounter() {

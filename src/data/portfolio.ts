@@ -1,4 +1,83 @@
-export const projects = [
+export type LiveProduct = {
+  url: string;
+  tagline: string;
+  hero: { src: string; alt: string; width: number; height: number };
+  shots: { src: string; alt: string; label: string; width: number; height: number }[];
+  platforms: { name: string; href: string }[];
+  highlights: { value: string; label: string }[];
+  press: { outlet: string; quote: string; href: string };
+  reviews: { quote: string; author: string; source: string }[];
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  category: string;
+  clientType: string;
+  challenge: string;
+  solution: string;
+  techStack: string[];
+  results: string[];
+  mockupType: 'desktop' | 'mobile';
+  color: string;
+  featured: boolean;
+  live?: LiveProduct;
+};
+
+const UTM = '?utm_source=computrontech&utm_medium=referral&utm_campaign=showcase';
+
+export const projects: Project[] = [
+  {
+    slug: 'doppelgone',
+    title: 'Doppelgone',
+    category: 'Our product · Duplicate photo cleaner',
+    clientType: 'Consumer software · Built and run by Computron Tech',
+    challenge: 'Years of backups, bursts and shared albums leave photo libraries full of copies, and cloud storage fills up. Most cleaners upload your photos to a server to compare them, work on only one platform, or delete without asking.',
+    solution: 'We designed, built and run Doppelgone end to end. On-device AI finds exact duplicates, similar shots and bursts, keeps the best shot of each set and moves the rest to the library’s own trash, where they wait for 30 days. Photos never leave the device. The same engine ships as a Chrome extension for Google Photos and iCloud Photos, desktop apps for Windows and Mac, and phone apps for iPhone and Android.',
+    techStack: ['TypeScript', 'Chrome Extension (MV3)', 'ONNX Runtime · WebGPU/WASM', 'Electron', 'Swift', 'Capacitor', 'Next.js', 'Vercel', 'Supabase', 'Polar'],
+    results: [
+      'Live on 5 platforms, in 4 app stores',
+      'On-device AI: photos never leave the device',
+      'Featured by MakeUseOf',
+      'Paying customers and public store reviews',
+    ],
+    mockupType: 'desktop',
+    color: '#2DD4BF',
+    featured: true,
+    live: {
+      url: `https://doppelgone.app/${UTM}`,
+      tagline: 'Get your storage back. Keep every memory.',
+      hero: { src: '/doppelgone/og.png', alt: 'Doppelgone showing 4.2 GB of duplicate photos that can be freed up', width: 1200, height: 630 },
+      shots: [
+        { src: '/doppelgone/chrome-results.webp', alt: 'Doppelgone Chrome extension results', label: 'Chrome', width: 760, height: 1200 },
+        { src: '/doppelgone/mac-results.webp', alt: 'Doppelgone Mac app results', label: 'Mac', width: 1520, height: 1360 },
+        { src: '/doppelgone/win-results.webp', alt: 'Doppelgone Windows app results', label: 'Windows', width: 1520, height: 1360 },
+        { src: '/doppelgone/iphone-results.webp', alt: 'Doppelgone iPhone app results', label: 'iPhone', width: 780, height: 1688 },
+        { src: '/doppelgone/android-results.webp', alt: 'Doppelgone Android app results', label: 'Android', width: 824, height: 1830 },
+      ],
+      platforms: [
+        { name: 'Chrome Web Store', href: 'https://chromewebstore.google.com/detail/pabeloccfbcecmhfagdjmdiekfcfadgb' },
+        { name: 'Microsoft Store', href: 'https://apps.microsoft.com/detail/9N1K7Q08WRMT' },
+        { name: 'Mac', href: `https://doppelgone.app/${UTM}` },
+        { name: 'App Store', href: 'https://apps.apple.com/app/id6824153182' },
+        { name: 'Google Play', href: 'https://play.google.com/store/apps/details?id=app.doppelgone.mobile' },
+      ],
+      highlights: [
+        { value: '5', label: 'Platforms' },
+        { value: '100%', label: 'On-device' },
+        { value: '30-day', label: 'Undo window' },
+      ],
+      press: {
+        outlet: 'MakeUseOf',
+        quote: 'It’s about time somebody made a specific, user-controlled tool',
+        href: 'https://www.makeuseof.com/google-photos-most-annoying-issue-finally-has-a-fix/',
+      },
+      reviews: [
+        { quote: 'I wrote to the company with my thoughts and ideas, got an immediate reply and then within 6 hours had another reply with the improvements already rolled out!', author: 'David M.', source: 'Chrome Web Store' },
+        { quote: 'Took about 10 minutes to review 3600+ google photos. Found 300+ duplicates. Worked as advertised.', author: 'Harry D.', source: 'Chrome Web Store' },
+      ],
+    },
+  },
   {
     slug: 'e-commerce',
     title: 'E-Commerce Solutions',

@@ -8,6 +8,7 @@ import PortfolioCard from '@/components/PortfolioCard';
 import ProcessStep from '@/components/ProcessStep';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TechMarquee from '@/components/TechMarquee';
+import ProductSpotlight from '@/components/ProductSpotlight';
 import { services } from '@/data/services';
 import { projects } from '@/data/portfolio';
 
@@ -29,6 +30,8 @@ function SectionHeader({ label, title, desc }: { label?: string; title: string; 
     </motion.div>
   );
 }
+
+const liveProduct = projects.find((p) => p.live);
 
 export default function Home() {
   return (
@@ -53,29 +56,35 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Capabilities Showcase */}
+      {/* Our Product */}
       <Section className="bg-white/[0.01]">
-        <SectionHeader label="Our Capabilities" title="What We Can Build" desc="Concept designs showcasing our development capabilities across industries." />
+        <SectionHeader label="Our Product" title="We Build Our Own Products, Too" desc="Doppelgone is designed, built and run by Computron Tech. It's live on five platforms with paying customers." />
+        {liveProduct && <ProductSpotlight project={liveProduct} />}
+      </Section>
+
+      {/* Capabilities Showcase */}
+      <Section>
+        <SectionHeader label="Our Capabilities" title="What We Can Build" desc="Concept designs showing how we'd approach projects across industries." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projects.filter(p => p.featured).map((p, i) => (
+          {projects.filter(p => p.featured && !p.live).map((p, i) => (
             <PortfolioCard key={p.slug} {...p} index={i} />
           ))}
         </div>
         <div className="text-center mt-12">
           <Link href="/work" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">
-            Explore All Capabilities →
+            See All Our Work →
           </Link>
         </div>
       </Section>
 
       {/* How We Work */}
-      <Section>
+      <Section className="bg-white/[0.01]">
         <SectionHeader label="Our Process" title="How We Work" desc="A proven process that turns your idea into a shipped product — efficiently and transparently." />
         <ProcessStep />
       </Section>
 
       {/* Stats */}
-      <Section className="bg-white/[0.01]">
+      <Section>
         <AnimatedCounter />
       </Section>
 

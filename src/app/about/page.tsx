@@ -34,13 +34,16 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-white mb-6">Our Story</h2>
             <div className="space-y-4 text-slate-400 leading-relaxed">
               <p>
-                Founded in 2025, Computron Tech was born from a simple belief: great software shouldn&apos;t take forever or cost a fortune. Too many businesses were being underserved by slow, expensive agencies that overpromised and underdelivered.
+                Founded in 2021, Computron Tech was born from a simple belief: great software shouldn&apos;t take forever or cost a fortune. Too many businesses were being underserved by slow, expensive agencies that overpromised and underdelivered.
               </p>
               <p>
                 We set out to build a different kind of studio — one that combines deep technical expertise with the agility and dedication of a small team. A studio where every project gets senior-level attention, where communication is transparent, and where the goal is always to deliver real, measurable results.
               </p>
               <p>
                 Today, we work with startups and established businesses worldwide, building everything from MVPs to enterprise platforms. Our approach is simple: understand the problem, design the right solution, and ship it fast.
+              </p>
+              <p>
+                We also build our own products. <Link href="/work/doppelgone" className="text-teal-300 hover:text-teal-200">Doppelgone</Link>, our duplicate photo cleaner, runs its AI on the user&apos;s own device and is live on Chrome, Windows, Mac, iPhone and Android. Building and running it ourselves keeps our skills sharp across every platform we offer to clients.
               </p>
             </div>
           </motion.div>
@@ -77,8 +80,8 @@ export default function AboutPage() {
       <section className="py-20 px-6 bg-white/[0.01]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
-            { value: '6 Weeks', label: 'Average Delivery Time' },
-            { value: 'Full-Stack', label: 'Development Capabilities' },
+            { value: '5 Platforms', label: 'Shipped with Doppelgone' },
+            { value: 'Full-Stack', label: 'Web, Desktop and Mobile' },
             { value: 'Any Stack', label: 'Technology Agnostic' },
           ].map((s) => (
             <div key={s.label}>
