@@ -4,24 +4,24 @@ import { motion } from 'framer-motion';
 
 const stats = [
   {
-    label: '5 Platforms',
-    sublabel: 'Shipped with Doppelgone',
-    icon: <path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3zM5 17l.9 2.1L8 20l-2.1.9L5 23l-.9-2.1L2 20l2.1-.9L5 17zM19 15l.7 1.6 1.6.7-1.6.7L19 19.6l-.7-1.6-1.6-.7 1.6-.7.7-1.6z" />,
+    label: 'Since 2021',
+    sublabel: 'Building software for clients',
+    icon: <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />,
   },
   {
-    label: '4 App Stores',
-    sublabel: 'Chrome, Microsoft, Apple, Google',
+    label: 'Web, Mobile, Desktop',
+    sublabel: 'One team across all three',
+    icon: <path d="M4 5h16v10H4zM2 19h20M9 15v4M15 15v4" />,
+  },
+  {
+    label: 'App Store Ready',
+    sublabel: 'Published on Apple, Google, Microsoft and Chrome stores',
     icon: <path d="M4 7h16l-1 4a3 3 0 0 1-3 2 3 3 0 0 1-2-1 3 3 0 0 1-2 1 3 3 0 0 1-2-1 3 3 0 0 1-2 1 3 3 0 0 1-3-2L4 7zM5 13v7h14v-7M10 20v-4h4v4" />,
   },
   {
-    label: 'On-Device AI',
-    sublabel: 'Private by design',
-    icon: <path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM12 15v3" />,
-  },
-  {
-    label: 'Full-Stack',
-    sublabel: 'Web, desktop and mobile',
-    icon: <path d="M4 5h16v10H4zM2 19h20M9 15v4M15 15v4" />,
+    label: 'Senior Engineers',
+    sublabel: 'On every project, start to finish',
+    icon: <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" />,
   },
 ];
 
