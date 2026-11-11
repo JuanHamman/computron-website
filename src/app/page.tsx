@@ -8,7 +8,6 @@ import PortfolioCard from '@/components/PortfolioCard';
 import ProcessStep from '@/components/ProcessStep';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TechMarquee from '@/components/TechMarquee';
-import ProductSpotlight from '@/components/ProductSpotlight';
 import { services } from '@/data/services';
 import { projects } from '@/data/portfolio';
 
@@ -31,8 +30,6 @@ function SectionHeader({ label, title, desc }: { label?: string; title: string; 
   );
 }
 
-const liveProduct = projects.find((p) => p.live);
-
 export default function Home() {
   return (
     <>
@@ -54,12 +51,6 @@ export default function Home() {
             <ServiceCard key={s.id} title={s.title} shortDesc={s.shortDesc} icon={s.icon} index={i} />
           ))}
         </div>
-      </Section>
-
-      {/* Our Product */}
-      <Section className="bg-white/[0.01]">
-        <SectionHeader label="Our Product" title="We Build Our Own Products, Too" desc="Doppelgone is designed, built and run by Computron Tech. It's live on five platforms with paying customers." />
-        {liveProduct && <ProductSpotlight project={liveProduct} />}
       </Section>
 
       {/* Capabilities Showcase */}
